@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello, World! - A-Frame</title>
+    <meta name="description" content="Hello, World! - A-Frame">
+    <script src="https://aframe.io/releases/0.6.1/aframe.min.js"></script>
+  </head>
+  <body style="background-color: #aaaaaa">
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="slime-obj" src="assets/slimemodel.obj"></a-asset-item>
+        <a-asset-item id="slime-mtl" src="assets/slimemodel.mtl"></a-asset-item>
+        <a-asset-item id="makey-obj" src="assets/makeytherobot.obj"></a-asset-item>
+      </a-assets>
+      <a-entity
+        geometry="primitive: box; height: 1; width: 1, depth: 2"
+        rotation="0 20 0"
+        position="-1 4 -6"
+        material="color: #4CC3D9; shader: standard; src: images/bricks.jpg"
+        ></a-entity>
+      <a-entity
+        geometry="primitive: sphere; radius: 1.25"
+        position="0 1.25 -5"
+        material="color: #00FF00; shader: standard; src: images/bricks.jpg"
+        ></a-entity>
+      <a-entity
+        obj-model="obj: #slime-obj"
+        material="src:assets/slimeGreen.png"
+        position="0 0 -3"
+        scale="0.3 0.3 0.3"
+        ></a-entity>
+      <a-entity
+        obj-model="obj: #makey-obj"
+        material="src: assets/orange.jpg"
+        position="-2 1 -3"
+        scale="0.05 0.05 0.05"
+        ></a-entity>
+    </a-scene>
+  </body>
+</html>
