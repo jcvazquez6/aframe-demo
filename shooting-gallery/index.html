@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <meta charset="utf-8">
+    <title>PLTW Shooting Gallery</title>
+    <meta name="description" content="PLTW Shooting Gallery">
+    <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="js/constants.js"></script>
+    <script src="js/boxSpin.js"></script>
+    <script src="js/lookingAtBox.js"></script>
+    <script src="js/notLookingAtBox.js"></script>
+    <script src="js/clickOnBox.js"></script>
+  </head>
+  <body>
+    
+<!-- Main scene definition                       -->
+    <a-scene id="scene">
+      
+      <a-entity camera look-controls 
+                id="camera"
+                position="0 1.5 0"
+                rotation="0 0 0">
+        
+        <a-entity cursor
+                  position="0 0 -4"
+                  geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                  material="color: red; shader: flat">
+        </a-entity>
+
+        <a-entity raycaster
+                  objects: .clickable>
+        </a-entity>
+
+      </a-entity>
+      
+      <a-entity light="type:ambient; color: white;"
+                location="0 0 0">
+      </a-entity>
+
+      <a-entity box-spin looking-at-box not-looking-at-box click-on-box
+                class="clickable"
+                id="box" 
+                geometry="primitive:box"
+                position="0 3 -5"
+                material="color:blue;
+                          src: https://cdn.glitch.com/a11545eb-f532-4422-ada5-93dc28401f31%2FbrickPattern.jpg?1515540704873">
+      </a-entity>
+      
+      <a-entity environment="preset:starry;"></a-entity>
+      <a-sound autoplay="true" loop="true" src="src: url(https://cdn.glitch.com/a11545eb-f532-4422-ada5-93dc28401f31%2Fmusic.wav?1515615162895)"></a-sound>
+    </a-scene>
+    
+  </body>
+</html>
