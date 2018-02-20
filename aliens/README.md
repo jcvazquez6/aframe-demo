@@ -1,4 +1,4 @@
-# APCSP: A-Frame Demo Earth and Moon
+# APCSP: A-Frame Aliens!
 
 A-Frame demonstration program with [A-Frame](https://aframe.io).
 
